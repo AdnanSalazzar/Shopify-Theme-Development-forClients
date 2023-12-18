@@ -1,0 +1,15 @@
+{% comment %} 
+    Renderes first word and second words
+
+    Accepts:
+    - words: {String} the first word 
+    - secondWord: {String} the second word 
+
+    Usage: 
+        {% render 'my-snippets' , { word: word_variable , secondword: seccond_word_variable } %}
+    
+{% endcomment %}
+
+
+<p>This is coming from {{ word }} and second word is {{ secondword }}</p>
+<script src="{{'my-JS.js' | asset_url}}"  async></script>

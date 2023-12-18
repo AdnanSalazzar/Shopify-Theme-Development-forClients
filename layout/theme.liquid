@@ -112,6 +112,13 @@
 
 <body class="template-{{ request.page_type | handle }}">
 
+  {% render 'my-snippets' , {
+    word: 'hello' , 
+    secondword: 'taynaki'
+  }
+  
+  %}
+
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {%- if settings.enable_ajax -%}
