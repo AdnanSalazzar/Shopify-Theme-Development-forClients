@@ -1,0 +1,29 @@
+<h1>Printing out </h1>
+
+<h2>{{ section.settings.text_setting }}</h2>
+
+
+{% schema %}
+{
+  "name": "mySection",
+  "tag": "section",
+  "class": "page-width rte",
+  "settings": [
+
+  {
+    "type": "text",
+    "id": "text_setting",
+    "label": "Theme Setting",
+    "default": "this is the default text",
+    "info": "placing some more help to merchants"
+  }
+
+
+  ],
+  "presets": [
+    {
+      "name": "mySection"
+    }
+  ]
+}
+{% endschema %}
