@@ -23,16 +23,16 @@
   <p>false</p>
 {% endif %}
 
-
 <h2>radio Settings</h2>
 <p>{{ section.settings.radio_setting }}</p>
 
-
 <h2>Color Settings</h2>
-<p style="color : {{ section.settings.color_setting }}">{{ section.settings.color_setting  }}</p>
+<p style="color : {{ section.settings.color_setting }}">{{ section.settings.color_setting }}</p>
 
-
-
+<div style="background: {{ section.settings.color_background_settings }} ; ">
+  <h2>color_background_settings</h2>
+  <p>{{ section.settings.color_background_settings }}</p>
+</div>
 
 {% schema %}
 {
@@ -103,7 +103,7 @@
       "type": "radio",
       "id": "radio_setting",
       "label": "radio Setting",
-      
+
       "options": [
         {
           "value": "value--1",
@@ -127,6 +127,11 @@
       "type": "color",
       "id": "color_setting",
       "label": "color_scheme Setting"
+    },
+    {
+      "type": "color_background",
+      "label": "color_background_settings",
+      "id": "color_background_settings"
     }
   ],
   "presets": [
