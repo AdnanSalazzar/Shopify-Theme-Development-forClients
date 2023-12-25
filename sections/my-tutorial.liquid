@@ -1,11 +1,11 @@
-<h1>Printing out </h1>
+<h1>Printing out</h1>
 
 <h3>Text Setting</h3>
 <h2>{{ section.settings.text_setting }}</h2>
 
 <h2>Text Area</h2>
 
-<p>{{ section.settings.textarea_setting |  newline_to_br}}</p>
+<p>{{ section.settings.textarea_setting | newline_to_br }}</p>
 
 <h2>Rich Text Settings</h2>
 <div>{{ section.settings.richtext_setting }}</div>
@@ -13,47 +13,121 @@
 <h2>Range Settings</h2>
 <p>{{ section.settings.ranget_setting }}</p>
 
+<h2>Select Settings</h2>
+<p>{{ section.settings.select_setting }}</p>
+
+<h2>checkbox Settings</h2>
+{% if section.settings.checkbox_setting == true %}
+  <p>True</p>
+{% else %}
+  <p>false</p>
+{% endif %}
+
+
+<h2>radio Settings</h2>
+<p>{{ section.settings.radio_setting }}</p>
+
+
+<h2>Color Settings</h2>
+<p style="color : {{ section.settings.color_setting }}">{{ section.settings.color_setting  }}</p>
+
+
+
+
 {% schema %}
 {
   "name": "mySection",
   "tag": "section",
   "class": "page-width rte",
   "settings": [
-
-  {
-    "type": "text",
-    "id": "text_setting",
-    "label": "Theme Setting",
-    "default": "this is the default text",
-    "info": "placing some more help to merchants",
-    "placeholder": "Preview what will u write"
-  },
-  {
-    "type": "textarea",
-    "id": "textarea_setting",
-    "label": "textarea Setting",
-    "default": "Default Text",
-    "placeholder": "Preview what will u write"
-  },
-  {
-    "type": "richtext",
-    "id": "richtext_setting",
-    "label": "richtext Setting"
-    
-  },
-  {
-    "type": "range",
-    "id": "ranget_setting",
-    "label": "range Setting",
-    "min": 0, 
-    "max": 100,
-    "step": 10,
-    "default": 10,
-    "unit": "px"
-    
-  }
-
-
+    {
+      "type": "text",
+      "id": "text_setting",
+      "label": "Theme Setting",
+      "default": "this is the default text",
+      "info": "placing some more help to merchants",
+      "placeholder": "Preview what will u write"
+    },
+    {
+      "type": "textarea",
+      "id": "textarea_setting",
+      "label": "textarea Setting",
+      "default": "Default Text",
+      "placeholder": "Preview what will u write"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext_setting",
+      "label": "richtext Setting"
+    },
+    {
+      "type": "range",
+      "id": "ranget_setting",
+      "label": "range Setting",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "select_setting",
+      "label": "select setting",
+      "options": [
+        {
+          "value": "value--1",
+          "label": "value 1"
+        },
+        {
+          "value": "value--2",
+          "label": "value 2"
+        },
+        {
+          "value": "value--3",
+          "label": "value 3"
+        },
+        {
+          "value": "value--4",
+          "label": "value 4"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "checkbox_setting",
+      "label": "checkbox Setting",
+      "default": false
+    },
+    {
+      "type": "radio",
+      "id": "radio_setting",
+      "label": "radio Setting",
+      
+      "options": [
+        {
+          "value": "value--1",
+          "label": "value 1"
+        },
+        {
+          "value": "value--2",
+          "label": "value 2"
+        },
+        {
+          "value": "value--3",
+          "label": "value 3"
+        },
+        {
+          "value": "value--4",
+          "label": "value 4"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "color_setting",
+      "label": "color_scheme Setting"
+    }
   ],
   "presets": [
     {
