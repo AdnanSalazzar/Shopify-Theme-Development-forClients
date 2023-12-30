@@ -34,6 +34,11 @@
   <p>{{ section.settings.color_background_settings }}</p>
 </div>
 
+<div>
+  <h2>Video Editing</h2>
+  {{ section.settings.video_settings | video_tag: controls: true, style: 'height 500px; width: 500px' }}
+</div>
+
 {% schema %}
 {
   "name": "mySection",
@@ -132,6 +137,17 @@
       "type": "color_background",
       "label": "color_background_settings",
       "id": "color_background_settings"
+    },
+    {
+      "type": "video",
+      "label": "video_settings",
+      "id": "video_settings"
+    },
+    {
+      "type": "video_url",
+      "label": "video_url_settings",
+      "id": "video_url_settings",
+      "accept": ["youtube"]
     }
   ],
   "presets": [
