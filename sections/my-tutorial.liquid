@@ -39,11 +39,24 @@
   {{ section.settings.video_settings | video_tag: controls: true, style: 'height 500px; width: 500px' }}
 </div>
 
+<h2>Font Setting</h2>
+<p>Font Setting : {{ section.settings.font_picker_settings.family }}</p>
+
+<style>
+  {{ section.settings.font_picker_settings |  font_face: font_display: 'swap' }}
+
+
+  .adnan_tutorial * {
+     font-family: {{section.settings.font_picker_settings.family}}
+  }
+</style>
+
+
 {% schema %}
 {
   "name": "mySection",
   "tag": "section",
-  "class": "page-width rte",
+  "class": "page-width rte adnan_tutorial",
   "settings": [
     {
       "type": "text",
@@ -148,7 +161,14 @@
       "label": "video_url_settings",
       "id": "video_url_settings",
       "accept": ["youtube"]
+    },
+    {
+      "type": "font_picker",
+      "label": "font_picker_settings",
+      "id": "font_picker_settings",
+      "default": "bio_rhyme_n2"
     }
+
   ],
   "presets": [
     {
