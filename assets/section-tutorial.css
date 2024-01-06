@@ -1,3 +1,10 @@
-.section-tutorial{
-    background-color: red;
+.adnan_tutorial{
+    background-color: navajowhite;
+}
+
+.customClass p {
+    background-color: var(--primary-color);
+}
+.customClass button {
+    color: var(--primary-color);
 }

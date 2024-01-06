@@ -1,4 +1,30 @@
-{{ 'section-tutorial.css' |  asset_url |  stylesheet_tag }}
+{{ 'section-tutorial.css' | asset_url | stylesheet_tag }}
+
+<style>
+  {{ section.settings.font_picker_settings |  font_face: font_display: 'swap' }}
+
+
+  .adnan_tutorial * {
+     font-family: {{section.settings.font_picker_settings.family}}
+
+  }
+
+  #shopify-section-{{ section.id }}{
+    background:{{ section.settings.color_setting }}
+  }
+</style>
+
+<div class="customClass" style="--primary-color: {{ section.settings.color_setting }};">
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, itaque cum. Quaerat deleniti explicabo aut
+    provident itaque voluptates tenetur sapiente voluptatibus alias. Error perspiciatis sunt exercitationem quos quasi
+    quibusdam quidem eum nihil nisi, expedita saepe maxime accusantium, vitae ad itaque ea eaque? Necessitatibus hic
+    molestiae veniam temporibus at a rem?
+  </p>
+  <button class="btn">
+      YOLO
+  </button>
+</div>
 
 <h1>Printing out</h1>
 
@@ -43,16 +69,6 @@
 
 <h2>Font Setting</h2>
 <p>Font Setting : {{ section.settings.font_picker_settings.family }}</p>
-
-<style>
-  {{ section.settings.font_picker_settings |  font_face: font_display: 'swap' }}
-
-
-  .adnan_tutorial * {
-     font-family: {{section.settings.font_picker_settings.family}}
-  }
-</style>
-
 
 {% schema %}
 {
@@ -170,7 +186,6 @@
       "id": "font_picker_settings",
       "default": "bio_rhyme_n2"
     }
-
   ],
   "presets": [
     {
